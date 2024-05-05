@@ -41,6 +41,12 @@ public class CustomerServiceImpl implements ICustomerService {
 
     public void addOrUpdateCustomer(CustomerCreateRequest customerCreateRequest){
         CustomerEntity customer = customerConverter.toCustomerEntity(customerCreateRequest);
+        if(customerCreateRequest.getId() != null){
+            CustomerEntity customerEntity = customerRepository.findById(customerCreateRequest.getId()).get();
+            if(customerEntity.getCreatedBy() != null) customer.setCreatedBy(customerEntity.getCreatedBy());
+            if(customerEntity.getCreatedDate() != null) customer.setCreatedDate(customerEntity.getCreatedDate());
+            if(customerEntity.getUserEntities() != null) customer.setUserEntities(customerEntity.getUserEntities());
+        }
         customerRepository.save(customer);
     }
 
