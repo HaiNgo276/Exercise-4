@@ -20,7 +20,7 @@ public enum StatusType {
     public static Map<String,String> type(){
         Map<String,String> listType = new TreeMap<>();
         for(StatusType item : StatusType.values()){
-            listType.put(item.getStatusName() , item.statusName);
+            listType.put(item.toString() , item.statusName);
         }
         return listType;
     }
