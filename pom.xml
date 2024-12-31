@@ -15,7 +15,7 @@
 	</parent>
 
 	<properties>
-		<mysql.version>8.0.13</mysql.version>
+<!--		<mysql.version>8.0.16</mysql.version>-->
 		<sitemesh.version>2.4.2</sitemesh.version>
 		<displaytag.version>1.2</displaytag.version>
 		<java.version>1.8</java.version>
@@ -47,11 +47,19 @@
 			<version>4.2.16.RELEASE</version>
 		</dependency>
 
+<!--		<dependency>-->
+<!--			<groupId>mysql</groupId>-->
+<!--			<artifactId>mysql-connector-java</artifactId>-->
+<!--			<version>${mysql.version}</version>-->
+<!--		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.version}</version>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<version>8.3.0</version>
 		</dependency>
+
 
 		<!-- Tomcat embedded container-->
 		<dependency>
